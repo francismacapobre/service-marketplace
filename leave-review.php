@@ -38,7 +38,7 @@ if (isset($_POST['leave-review'])) {
     
 }
 
-header('refresh:3; url = http://localhost/marketplace.php');
+header('refresh:3; url = http://localhost/index.php');
 
 ?>
 </body>

@@ -31,7 +31,7 @@ if(isset($_POST['newad'])){
     if (mysqli_query($conn, $query)) {
         echo "<p>Record updated successfully</p>";
         echo "<p>Redirecting to login page...</p>";
-        header('refresh:3; url = http://localhost/marketplace.php');
+        header('refresh:3; url = http://localhost/index.php');
     } else {
         echo "Error updating record: " . mysqli_error($conn);
         

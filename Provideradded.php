@@ -81,7 +81,7 @@ if (isset($_POST['ssubmit'])){
 }
 
 echo "<p>Redirecting to login page...</p>";
-header('refresh:3; url = http://localhost/marketplace.php');
+header('refresh:3; url = http://localhost/index.php');
 CloseCon($conn);
 
 ?>
