@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <style>
+      body {
+      background-color: linen;
+      }
+
+      h1 {
+      color: maroon;
+      }
+
+      button {
+          margin-left: 20px;
+      }
+  </style>
+  </head>
+
+<div style="text-align:center; padding-top:30px">
+  <h1>Search by Rating</h1>
+<body>
+  <h4>This retrieves all the reviews who have received a specified rating value.</h4>
+<h4>Drag the slider to specify rating</h4>
+<form action="selection-query.php" method="GET">
+  <p>Rating: <input type="range"  id = "range_rating" min="0" max="5" oninput="range_rating_disp.value = range_rating.value" name="rating">
+  <output id =  "range_rating_disp"></output><button type="submit">Submit</button>
+</form>
+

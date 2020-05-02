@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style>
+            body {
+            background-color: linen;
+            }
+    
+            h1 {
+            color: maroon;
+            }
+    
+            button {
+                margin-left: 20px;
+            }
+        </style>
+    </head>
+
+<div style="text-align:center; padding-top:30px">
+<h1>Equipment Information</h1>
+<h4>Retrieve relevant equipment information</h4>
+<body>
+
+<form action="equipmentinfo.php" method="GET">
+    <h3>Columns in EquipmentUses table are:</h3>
+    EquipmentID
+    </br>
+    ServiceID
+    </br>
+    EquipmentName
+    </br>
+    </br>
+    <label>Enter equipment information (columns) seperated by commas</label>
+    <input name="cust_cols" type="text" placeholder="Type here">
+    <br>
+    <br>
+    <input type="submit" value="Search">
+</form>
+
+</body>
+<form action="equipmentinfoupdate.php" method="POST">
+    <h5>Update EquipmentName by EquipmentID</h5>
+    <label>Change the ID of the equipment with name: </label>
+    <input name="old_name" type="text" placeholder="Old name">
+    <label>to: </label>
+    <input name="new_id" type="text" placeholder="New ID">
+    <input type="submit" value="Enter">
+    <br>
+</form>
+
+</div>
+</html>
