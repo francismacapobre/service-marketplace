@@ -103,6 +103,7 @@
           $_SESSION['providerid'] = $row["providerid"];
             echo '<tr><td>' . $row["servicetype"]
           . '</td><td>' . $row["daterequested"] . '</td><td>
+          <form action = "leave-review.php" method = "post">
           <input class="input-field" type="text" id="textR" name="textR" placeholder="Comment">
           <label for="rating">Rate:</label>
           <select class="selector" id="rating" name="rating">
@@ -113,7 +114,7 @@
           <option value="4">4</option>
           <option value="5">5</option>
           </select>
-          <input class="input-button" type="submit" name="leave-review" value="Leave Review" >
+          <input class="input-button" type="submit" name="leave-review" value="Leave Review" ></form>
           </td></tr>';
         }
 
