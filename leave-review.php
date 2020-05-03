@@ -31,7 +31,7 @@
   if (isset($_POST['leave-review'])) {
     mysqli_query($conn, $sql) or die(mysqli_error($conn)); 
   }
-  header('refresh:3; url=https://mighty-hamlet-96281.herokuapp.com//index.php');
+  header('refresh:3; url=https://mighty-hamlet-96281.herokuapp.com/index.php');
   ?>
   </body>
 </html>
