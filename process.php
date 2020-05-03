@@ -58,6 +58,13 @@
         height: 6vmin;
       }
 
+      p {
+        color: #00458b;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 2.2vmin;
+        padding-bottom: 2vmin;
+      }
+
       .input {
         margin-bottom: 1vmin;
       }
@@ -65,7 +72,6 @@
       .bottom {
         padding-top: 2vmin;
       }
-
     </style>
   <head>
 
@@ -121,7 +127,7 @@
         </form></div>';
         
     } else {
-      echo "Invalid Username. Please try again, or create a new account";
+      echo "<p>Invalid Username. Please try again, or create a new account</p>";
     }
   }
 

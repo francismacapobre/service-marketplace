@@ -1,35 +1,49 @@
 <html>
-<head><title>Updating...</title><style>
-        body {
-        background-color: linen;
-        }
+  <head>
+    <style>
+      body {
+        background-color: #fff;
+      }
 
-        h1 {
-        color: maroon;
-        }
+      h1 {
+        color: #00458b;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 6vmin;
+      }
 
-        button {
-            margin-left: 20px;
-        }
-    </style></head>
+      .input-field {
+        font-family: "Lucida Console", Monaco, monospace;
+        border-radius: 1vmin;
+        padding-left: 1vmin;
+        width: 35vmin;
+        height: 6vmin;
+      }
 
-<div style="text-align:center; padding-top:30px">
-<h1>Update my Address</h1>
-<body>
+      .input-button {
+        font-family: "Lucida Console", Monaco, monospace;
+        border-radius: 1vmin;
+        font-size: 2.2vmin;
+        width: 35vmin;
+        height: 6vmin;
+      }
 
-<?php
+      .input {
+        margin-bottom: 1vmin;
+      }
+    </style>
+  </head>
 
+  <div style="text-align:center; padding-top:30px">
+  <h1>Update Address</h1>
+  <body>
 
-if (isset($_POST["changeaddress"])){
-    
-    echo '<form action = "updatetonew.php" method = post>';
-    echo 'Enter new address: <input name = newad type = text> <input type = submit name = updatead value = Update></form>';
-}
-
-?>
-
-
-
-</body>
-</div>
+  <?php
+  if (isset($_POST["changeaddress"])){ 
+    echo '<form action = "updatetonew.php" method=post>';
+    echo '<div class="input"><input class="input-field" name=newad type=text placeholder="New Address"></div>
+    <div class="input"><input class="input-button" type=submit name=updatead value=Update></form></div>';
+  }
+  ?>
+  </body>
+  </div>
 </html>
