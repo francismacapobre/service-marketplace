@@ -3,16 +3,17 @@
     <title>Administrator</title>
         <style>
           body {
-          background-color: white;
+            background-color: white;
           }
 
           h1 {
             color: #00458b;
             font-family: "Courier New", Courier, monospace;
-            font-size: 8vmin;
+            font-size: 6vmin;
           }
 
           .admin-button {
+            border-radius: 1vmin;
             font-family: "Lucida Console", Monaco, monospace;
             font-size: 2.2vmin;
             width: 35vmin;
