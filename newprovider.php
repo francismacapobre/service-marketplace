@@ -1,49 +1,58 @@
 <html>
-<head><title> New Profile...</title> <style>
-    body {
-      background-color: linen;
-    }
+  <head>
+    <style>
+       body {
+        background-color: #fff;
+      }
 
-    h1 {
-      color: maroon;
-    }
+      h1 {
+        color: #00458b;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 6vmin;
+      }
 
-    button {
-        margin-left: 20px;
-    }
+      p {
+        color: #282828;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 2.2vmin;
+      }
 
-</style></head>
+      .input-field {
+        font-family: "Lucida Console", Monaco, monospace;
+        border-radius: 1vmin;
+        padding-left: 1vmin;
+        width: 35vmin;
+        height: 6vmin;
+      }
 
+      .input-button {
+        font-family: "Lucida Console", Monaco, monospace;
+        border-radius: 1vmin;
+        font-size: 2.2vmin;
+        width: 35vmin;
+        height: 6vmin;
+      }
 
-<div style="text-align:center;">
-<h1 style="padding-top: 20px">Create New Service Provider Account</h1>
-<body>
-<form action = "providerAdded.php" method = "post">
+      .input {
+        margin-bottom: 1vmin;
+      }
+    </style>
+  </head>
 
-<div style="text-align:center;">
-<b> Please Enter The Following </b>
+  <div style="text-align:center;">
+  <h1 style="padding-top: 20px">Create New Service Provider Account</h1>
+  <body>
+  <form action = "providerAdded.php" method = "post">
+  <div style="text-align:center;">
+  <p>Please fill</p>
+  <div class="input"><input class="input-field" placeholder="Full name" type="text" name="pname" size=30 ></div>
+  <div class="input"><input class="input-field" placeholder="Deposit Number" type="text" name="bankacc" size=16 maxlength=16 ></div>
+  <div class="input"><input class="input-field" placeholder="Primary language" type="text" name="lang" size=30></div>
+  <div class="input"><input class="input-button" type="submit" name="ssubmit" value="Enter"></div>
+  </form>
+  </div>
 
-<p>Name (First and Last):
-<input type = "text" name = "pname" size = 30  >
-</p> 
-
-<p>Bank Account (For Receiving Payment):
-<input type = "text" name = "bankacc" size = 16 maxlength = 16 >
-</p> 
-
-<p>Primary Language Spoken:
-<input type = "text" name = "lang" size = 30  >
-</p> 
-
-<p>
-<input type = "submit" name = "ssubmit" value = "Enter">
-</p> 
-
-
-</form>
-</div>
-
-</body>
-</div>
+  </body>
+  </div>
 
 </html>
