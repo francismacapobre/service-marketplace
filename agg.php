@@ -21,7 +21,7 @@
     <input type="submit" class="button" name="WORST" value="Retrieve" />
 </form>
 
-<form action="agg2.php" method="post">
+<form action="agg-second.php" method="post">
     <input type="submit" class="button" name="insertnewservice" value="Update Service Price" />
 </form>
 

@@ -1,9 +1,9 @@
 if (isset($_POST['insertnewservice'])){
 
-echo '<form action= "agg2.php" method="post">
+echo '<form action= "agg-second.php" method="post">
 <input type="text" name="typetype" value="Enter" />
     </form>';
- echo '<form action= "agg2.php" method="post">
+ echo '<form action= "agg-second.php" method="post">
     <input type="text" name="valuevalue" value="Enter" />
     <input type = submit name = updatead value = Update>       </form>';
 

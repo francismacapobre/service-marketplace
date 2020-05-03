@@ -19,7 +19,7 @@
 
 
 
-<form action= "agg2.php" method = "post"> Service Type:  
+<form action= "agg-second.php" method = "post"> Service Type:  
 <input type= "text"  name= "typetype" placeholder="Enter" required="required" /> 
    Value: <input type= "text" name="valuevalue" placeholder=Enter required="required" /> <input type=submit name=xxx value=Enter />
   </form>
