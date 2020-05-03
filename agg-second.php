@@ -32,18 +32,18 @@
         width: 100%;
       }
 
-      p {
-        color: #00458b;
-        font-family: "Lucida Console", Monaco, monospace;
-        font-size: 2.2vmin;
-        padding-bottom: 2vmin;
-      }
-
       table, th, td {
         border: 1px solid #808080;
         font-family: "Lucida Console", Monaco, monospace;
         padding: 1.2vmin;
         text-align: left;
+      }
+
+      p {
+        color: #00458b;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 2.2vmin;
+        padding-bottom: 2vmin;
       }
 
       .bold-row {
