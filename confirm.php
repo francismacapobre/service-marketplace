@@ -30,7 +30,7 @@
       if (mysqli_query($conn, $query)) {
           echo "<p>Profile deleted</p>";
           echo "<p>Redirecting...</p>";
-          header('refresh:3; url = http://localhost/index.php');
+          header('refresh:3; url=https://mighty-hamlet-96281.herokuapp.com/index.php');
       } else {
           echo "Error: " . mysqli_error($conn);
       }
@@ -38,7 +38,7 @@
     if (isset($_POST["deny"])){
       echo "<p>Account deletion cancelled</p>";
       echo "<p>Redirecting....</p>";
-      header('refresh:3; url = http://localhost/index.php');
+      header('refresh:3; url=https://mighty-hamlet-96281.herokuapp.com/index.php');
     }
 
     Closecon($conn);

@@ -113,9 +113,8 @@
           <option value="4">4</option>
           <option value="5">5</option>
           </select>
-          <input class="input-button" type="submit" name="leave-review" value=Enter >
-          </form></div></tr>';;
-         
+          <input class="input-button" type="submit" name="leave-review" value="Leave Review" >
+          </td></tr>';
         }
 
         echo "</table>";

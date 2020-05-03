@@ -58,7 +58,7 @@
   }
 
   echo "<p>Redirecting to login page...</p>";
-  header('refresh:3; url = http://localhost/index.php');
+  header('refresh:3; url=https://mighty-hamlet-96281.herokuapp.com/index.php');
   CloseCon($conn);
   ?>
   </body>

@@ -26,7 +26,7 @@
     if (mysqli_query($conn, $query)) {
       echo "<p>Update successful</p>";
       echo "<p>Redirecting...</p>";
-      header('refresh:3; url = http://localhost/index.php');
+      header('refresh:3; url=https://mighty-hamlet-96281.herokuapp.com//index.php');
     } else {
       echo "Error: " . mysqli_error($conn);
         
