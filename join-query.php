@@ -46,7 +46,7 @@ function myTable($obConn, $sql)
 
     $bolWhite = true;
     while ($row = mysqli_fetch_assoc($rsResult)) {
-        echo $bolWhite ? "<tr bgcolor=\"#CCCCCC\">" : "<tr bgcolor=\"#FFF\">";
+      echo $bolWhite ? "<tr bgcolor=\"#F0F0F0\">" : "<tr bgcolor=\"#FFF\">";
         $bolWhite=!$bolWhite; 
         foreach($row as $data) {
             echo "<td>$data</td>";

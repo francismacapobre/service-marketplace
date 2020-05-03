@@ -2,7 +2,7 @@
   <head>
     <style>
       body {
-        background-color: white;
+        background-color: #fff;
       }
 
       h1 {
@@ -46,6 +46,8 @@
 
       .bold-row {
         color: #fff;
+        padding-top: 2.2vmin;
+        padding-bottom: 2.2vmin;
       }
 
       .input {
@@ -86,7 +88,6 @@
       echo "</tr>";
     }
     echo"</table>";
-
     }
   }
 

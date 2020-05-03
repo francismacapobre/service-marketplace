@@ -1,67 +1,99 @@
 <html>
-    <head>
+  <head>
     <style>
-        body {
-        background-color: linen;
-        }
+      body {
+        background-color: #fff;
+      }
 
-        h1 {
-        color: maroon;
-        }
+      h1 {
+        color: #00458b;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 6vmin;
+      }
 
-        button {
-            margin-left: 20px;
-        }
+      p {
+        color: #282828;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 2.2vmin;
+        padding-bottom: 2vmin;
+      }
+
+      .info-button {
+        border-radius: 1vmin;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 2.2vmin;
+        width: 35vmin;
+        height: 6vmin;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table, th, td {
+        border: 1px solid #808080;
+        font-family: "Lucida Console", Monaco, monospace;
+        padding: 1.2vmin;
+        text-align: left;
+      }
+
+      .bold-row {
+        color: #fff;
+        padding-top: 2.2vmin;
+        padding-bottom: 2.2vmin;
+      }
+
     </style>
-</head>
+  </head>
 
-<div style="text-align:center; padding-top:30px">
-<h1>Records about all customers registered</h1>
-<body>
-<h4> This shows all the information regarding the customers of the app.</h4>
-<form action="all-customer-info.php" method="post">
-    <input type="submit" class="button" name="go" value="Retrieve" />
-</form>
+  <div style="text-align:center; padding-top:30px">
+  <h1>Customer Records</h1>
+  <body>
+  <p>Query all users and information</p>
+  <form action="all-customer-info.php" method="post">
+    <input class="info-button" type="submit" name="go" value="Retrieve" />
+  </form>
 
-<?php
-function myTable($obConn, $sql) 
-{
-    $rsResult = mysqli_query($obConn, $sql) or die(mySqli_error($obConn));
+  <?php
+  function myTable($obConn, $sql) 
+  {
+      $rsResult = mysqli_query($obConn, $sql) or die(mySqli_error($obConn));
 
-    if (mysqli_num_rows($rsResult) > 0) {
-        echo "<table width=\"100%\" border=\"0\" cellspacing=\"2\"cellpadding=\"0\"><tr align=\"center\" bgcolor=\"#CCCCCC\">";
+      if (mysqli_num_rows($rsResult) > 0) {
+        echo "<table><tr bgcolor=\"#00458b\">";
         $i = 0;
         while ($i < mysqli_num_fields($rsResult)) {
-            $field = mysqli_fetch_field_direct($rsResult, $i);
-            $fieldName=$field->name;
-            echo "<td><strong>$fieldName</strong></td>";
-            $i = $i + 1;
-        }
-    echo "</tr>";
+          $field = mysqli_fetch_field_direct($rsResult, $i);
+          $fieldName=$field->name;
+          echo "<td class=\"bold-row\"><strong>$fieldName</strong></td>";
+          $i = $i + 1;
+      }
+      echo "</tr>";
 
-    $bolWhite = true;
-    while ($row = mysqli_fetch_assoc($rsResult)) {
-        echo $bolWhite ? "<tr bgcolor=\"#CCCCCC\">" : "<tr bgcolor=\"#FFF\">";
-        $bolWhite=!$bolWhite; 
-        foreach($row as $data) {
-            echo "<td>$data</td>";
-        }
-        echo "</tr>";
-    }
-    echo"</table>";
+      $bolWhite = true;
+      while ($row = mysqli_fetch_assoc($rsResult)) {
+          echo $bolWhite ? "<tr bgcolor=\"#F0F0F0\">" : "<tr bgcolor=\"#FFF\">";
+          $bolWhite=!$bolWhite; 
+          foreach($row as $data) {
+              echo "<td>$data</td>";
+          }
+          echo "</tr>";
+      }
+      echo"</table>";
 
-    }
-}
+      }
+  }
 
-include 'mpconnection.php';
-$conn = OpenCon();
-$sql = "select * from customer1 NATURAL JOIN customer2";
+  include 'mpconnection.php';
+  $conn = OpenCon();
+  $sql = "select * from customer1 NATURAL JOIN customer2";
 
-if (isset($_POST['go'])){
-   myTable($conn, $sql);
-}
+  if (isset($_POST['go'])){
+    myTable($conn, $sql);
+  }
 
-?>
+  ?>
 
 </body>
 
