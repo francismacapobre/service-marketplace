@@ -1,34 +1,44 @@
 <html>
-<head><title>Delete?...</title><style>
-        body {
-        background-color: linen;
-        }
+  <head>
+    <style>
+      body {
+        background-color: #fff;
+      }
 
-        h1 {
-        color: maroon;
-        }
+      h1 {
+        color: #00458b;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 6vmin;
+      }
 
-        button {
-            margin-left: 20px;
-        }
-    </style></head>
+      p {
+        color: #282828;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 2.2vmin;
+        padding-bottom: 2vmin;
+      }
 
-<div style="text-align:center; padding-top:30px">
-<h1>Delete Account</h1>
-<body>
+      .action-button {
+        border-radius: 1vmin;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 2.2vmin;
+        width: 35vmin;
+        height: 6vmin;
+      }
+    </style>
+  </head>
 
-<?php
-
-if (isset($_POST["deleteprofile"])){
-    
-    echo '<form action = "confirm.php" method = post>';
-    echo 'Are you sure you want to permanently delete your profile? <input type = submit name = confirm value = Yes>
-    <input type = submit name = deny value = No></form>';
-}
-
-
-?>
-
-</body>
-</div>
+  <div style="text-align:center; padding-top:30px">
+  <h1>Delete Account</h1>
+  <body>
+  <?php
+    if (isset($_POST["deleteprofile"])){
+      echo '<form action = "confirm.php" method = post>';
+      echo '<p>Are you sure you would like to permanently delete your profile?</p>
+      <input class="action-button" type=submit name=confirm value=Yes>
+      <input class="action-button" type=submit name=deny value=No></form>';
+    }
+  ?>
+  </body>
+  </div>
 </html>

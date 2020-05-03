@@ -36,8 +36,8 @@
       }
     }
     if (isset($_POST["deny"])){
-      echo "<p>Account deletion denied</p>";
-      echo "<p>Redirecting to login page...</p>";
+      echo "<p>Account deletion cancelled</p>";
+      echo "<p>Redirecting....</p>";
       header('refresh:3; url = http://localhost/index.php');
     }
 
