@@ -35,6 +35,8 @@
       p {
         color: #00458b;
         font-family: "Lucida Console", Monaco, monospace;
+        font-size: 2.2vmin;
+        padding-bottom: 2vmin;
       }
 
       table, th, td {
