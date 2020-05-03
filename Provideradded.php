@@ -1,91 +1,66 @@
 <html>
-<head><title> Add Service Provider </title><style>
-    body {
-    background-color: linen;
-    }
+  <head>
+    <style>
+      body {
+        background-color: #fff;
+      }
 
-    h1 {
-    color: maroon;
-    }
+      p {
+        color: #00458b;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 2.2vmin;
+        padding-bottom: 2vmin;
+      }
+    </style>
+  <head>
 
-    button {
-        margin-left: 20px;
-    }
+  <div style="text-align:center;">
+  <body>
 
-    </style><head>
-
-<div style="text-align:center;">
-<body>
-
-<?php
-
-include 'mpconnection.php';
-$conn = Opencon();
-
-if (isset($_POST['ssubmit'])){
+  <?php
+  include 'mpconnection.php';
+  $conn = Opencon();
+  if (isset($_POST['ssubmit'])){
     $data_missing = array();
-    
-   
     if(empty($_POST['pname'])){
-        $data_missing[] = 'pname';
-
+      $data_missing[] = 'pname';
     } else {
-        $pname = $_POST["pname"];
+      $pname = $_POST["pname"];
     }
-
     if(empty($_POST['bankacc'])){
-
         $data_missing[] = 'bankacc';
     } else {
         $bankacc = $_POST["bankacc"];
     }
-
     if(empty($_POST['lang'])){
-
         $data_missing[] = 'lang';
     } else {
         $lang = $_POST["lang"];
     }
 
-    if (empty($data_missing)){
-        
+    if (empty($data_missing)){ 
         $query = "INSERT INTO ServiceProvider(name,BankAccount,LanguageSpoken) VALUE(?,?,?)";
         $stmt = mysqli_prepare($conn,$query);
-
         mysqli_stmt_bind_param($stmt, "sis",$pname,$bankacc,$lang);
-
         mysqli_stmt_execute($stmt);
-
         $affected_rows = mysqli_stmt_affected_rows($stmt);
-
         if ($affected_rows == 1){
-            echo 'Welcome! ' . $pname ;
-
-            mysqli_stmt_close($stmt);
-
-
+          echo '<p>Account Created</p>';
+          mysqli_stmt_close($stmt);
         } else {
-            echo "Error Occurred in Customer 1";
-            echo mysqli_error($conn);
-
-            mysqli_stmt_close($stmt);
-
+          echo "<p>Error in Customer 1 </p>";
+          echo mysqli_error($conn);
+          mysqli_stmt_close($stmt);
         }
-
     } else {
-
-       echo "Please Enter All The Fields!";
+      echo "<p>Please enter all fields</p>";
     }
-    
+  }
 
-}
-
-echo "<p>Redirecting to login page...</p>";
-header('refresh:3; url = http://localhost/index.php');
-CloseCon($conn);
-
-?>
-
-</body>
-</div>
+  echo "<p>Redirecting to login page...</p>";
+  header('refresh:3; url = http://localhost/index.php');
+  CloseCon($conn);
+  ?>
+  </body>
+  </div>
 </html>
