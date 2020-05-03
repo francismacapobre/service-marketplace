@@ -93,7 +93,7 @@
   include 'mpconnection.php';
   $conn = OpenCon();
 
-  get_table($conn, "SELECT servicetype, price FROM providedservice2");
+  get_table($conn, "SELECT servicetype as Service, price as Price FROM providedservice2");
     if (isset($_POST['update-database'])){
       $servicetype = @$_POST['service-type'];     
       $price = @$_POST['price-value'];

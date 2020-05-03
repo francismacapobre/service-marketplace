@@ -1,29 +1,31 @@
 <html>
-    <head><style>
-        body {
-        background-color: linen;
-        }
+  <head>
+    <style>
+      body {
+      background-color: linen;
+      }
 
-        h1 {
-        color: maroon;
-        }
+      h1 {
+      color: maroon;
+      }
 
-        button {
-            margin-left: 20px;
-        }
-    </style></head>
+      button {
+          margin-left: 20px;
+      }
+    </style>
+  </head>
 
-<div style="text-align:center; padding-top:30px">
-<body>
-<h1> Cheapest service price</h1>
-<h4>Retrieve the price of cheapest service that is available.</h4>
-<form action="agg.php" method="post">
-    <input type="submit" class="button" name="WORST" value="Retrieve" />
-</form>
+  <div style="text-align:center; padding-top:30px">
+  <body>
+  <h1> Cheapest service price</h1>
+  <h4>Retrieve the price of cheapest service that is available.</h4>
+  <form action="agg.php" method="post">
+      <input type="submit" class="button" name="WORST" value="Retrieve" />
+  </form>
 
-<form action="agg-second.php" method="post">
-    <input type="submit" class="button" name="insertnewservice" value="Update Service Price" />
-</form>
+  <form action="agg-second.php" method="post">
+      <input type="submit" class="button" name="insertnewservice" value="Update Service Price" />
+  </form>
 
 
 <?php
