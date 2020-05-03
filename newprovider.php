@@ -42,7 +42,7 @@
   <div style="text-align:center;">
   <h1 style="padding-top: 20px">Create Account</h1>
   <body>
-  <form action = "providerAdded.php" method = "post">
+  <form action = "provideradded.php" method = "post">
   <div style="text-align:center;">
   <p>Please fill</p>
   <div class="input"><input class="input-field" placeholder="Full name" type="text" name="pname" size=30 ></div>
