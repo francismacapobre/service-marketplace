@@ -13,12 +13,6 @@
  For new users, please sign up here: <input type = "submit" value = "Sign up">
 </form>
 
-
-<!--
-
-todo for aggregation and nested aggregation and division and projection
-    -->
-
 <form action = "admin.php" method = "post">
 For Admin:  <input  type = "submit" name = "adminsignin" value = "Sign in">
 </form>

@@ -40,7 +40,7 @@
   </head>
 
   <div style="text-align:center;">
-  <h1 style="padding-top: 20px">Create New Service Provider Account</h1>
+  <h1 style="padding-top: 20px">Create Account</h1>
   <body>
   <form action = "providerAdded.php" method = "post">
   <div style="text-align:center;">
