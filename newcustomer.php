@@ -49,7 +49,7 @@
   <div class="input"><input class="input-field" type="text" name="cardnum" size=16 maxlength=16 required="required" placeholder="Credit Card Number"></div>
   <div class="input"><input class="input-field" type="text" name="caddress" size=30 required="required" placeholder="Billing Address (House#, Street)"></div>
   <div class="input"><input class="input-field" type="text" name="cname" size=30 required="required" placeholder="Full name"></div>
-  <div class="input"><input class="input-button" type = "submit" name = "csubmit" value = "Submit"></div>
+  <div class="input"><input class="input-button" type="submit" name="csubmit" value="Submit"></div>
   </form>
   </div>
   </body>

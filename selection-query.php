@@ -1,3 +1,26 @@
+<html>
+    <head>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table, th, td {
+        border: 1px solid #808080;
+        font-family: "Lucida Console", Monaco, monospace;
+        padding: 1.2vmin;
+        text-align: left;
+      }
+
+      .bold-row {
+        color: #fff;
+        padding-top: 2.2vmin;
+        padding-bottom: 2.2vmin;
+      }
+
+    </style>
+  </head>
 
 <?php
 function myTable($obConn, $sql) 

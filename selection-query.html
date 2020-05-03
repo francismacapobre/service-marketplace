@@ -2,26 +2,77 @@
   <head>
     <style>
       body {
-      background-color: linen;
+        background-color: #fff;
       }
 
       h1 {
-      color: maroon;
+        color: #00458b;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 6vmin;
       }
 
-      button {
-          margin-left: 20px;
+      p {
+        color: #282828;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 2.2vmin;
       }
-  </style>
+
+      .input-button {
+        font-family: "Lucida Console", Monaco, monospace;
+        border-radius: 1vmin;
+        font-size: 2.2vmin;
+        width: 35vmin;
+        height: 6vmin;
+      }
+
+      .slider {
+        -webkit-appearance: none;
+        width: 20%;
+        height: 15px;
+        border-radius: 5px;  
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
+
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%; 
+        background: #00458b;
+        cursor: pointer;
+      }
+
+      .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #00458b;
+        cursor: pointer;
+      }
+
+      .input {
+        margin-bottom: 2vmin;
+      }
+    </style>
   </head>
 
-<div style="text-align:center; padding-top:30px">
+  <div style="text-align:center; padding-top:30px">
   <h1>Search by Rating</h1>
-<body>
-  <h4>This retrieves all the reviews who have received a specified rating value.</h4>
-<h4>Drag the slider to specify rating</h4>
-<form action="selection-query.php" method="GET">
-  <p>Rating: <input type="range"  id = "range_rating" min="0" max="5" oninput="range_rating_disp.value = range_rating.value" name="rating">
-  <output id =  "range_rating_disp"></output><button type="submit">Submit</button>
-</form>
+  <body>
+  <p>Query all the reviews by rating</p>
+  <form action="selection-query.php" method="GET">
+    <div class="input"><input class="slider" type="range" id="range_rating" min="0" max="5" oninput="range_rating_disp.value = range_rating.value" name="rating" required="required"></div>
+    <div class="input"><output id="range_rating_disp"></output></div>
+    <div class="input"><input class="input-button" type="submit" value="Retrieve"></div>
+  </form>
+  
+  </body>
+  </div>
+  
+</html>
 
