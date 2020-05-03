@@ -1,47 +1,83 @@
 <html>
-    <head>
+  <head>
     <style>
-        body {
-        background-color: linen;
-        }
+      body {
+        background-color: #fff;
+      }
 
-        h1 {
-        color: maroon;
-        }
+      h1 {
+        color: #00458b;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 6vmin;
+      }
 
-        button {
-            margin-left: 20px;
-        }
+      p {
+        color: #282828;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 2.2vmin;
+      }
+
+      .input-field {
+        font-family: "Lucida Console", Monaco, monospace;
+        border-radius: 1vmin;
+        padding-left: 1vmin;
+        width: 35vmin;
+        height: 6vmin;
+      }
+
+      .input-button {
+        font-family: "Lucida Console", Monaco, monospace;
+        border-radius: 1vmin;
+        font-size: 2.2vmin;
+        width: 35vmin;
+        height: 6vmin;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table, th, td {
+        border: 1px solid #808080;
+        font-family: "Lucida Console", Monaco, monospace;
+        padding: 1.2vmin;
+        text-align: left;
+      }
+      
+      .bold-row {
+        color: #fff;
+        padding-top: 2.2vmin;
+        padding-bottom: 2.2vmin;
+      }
+
+      .input {
+        margin-bottom: 1vmin;
+      }
     </style>
-</head>
+  </head>
 
-<div style="text-align:center; padding-top:30px">
-<h1>Service Providers Complete Record</h1>
-<body>
-<h4> This retrieves the names of all service providers who have either a record of complete or incomplete services.
-
-</h4>
-<h5> The status of service resuest is either "completed" or "in progress"</h1>
-<form action="join-query.php" method="post">
-    <label for="statusl">Status of service request: </label>  
-    <input type="text" id="status" name="statusl"><br><br>
-    <input type="submit" class="button" name="go" value="Retrieve Service Provider Record" />
-</form>
-
-<?php
-function myTable($obConn, $sql) 
-{
+  <div style="text-align:center; padding-top:30px">
+  <h1>Status Records</h1>
+  <body>
+  <p>Query the names of all service providers by service status</p>
+  <form action="join-query.php" method="post">
+    <div class="input"><input class="input-field" type="text" id="status" placeholder='"completed" or "in progress"' name="statusl"></div>
+    <div class="input"><input class="input-button" type="submit" class="button" name="go" value="Retrieve" /></div>
+  </form>
+  <?php
+  function myTable($obConn, $sql) 
+  {
     $rsResult = mysqli_query($obConn, $sql) or die(mySqli_error($obConn));
-
     if (mysqli_num_rows($rsResult) > 0) {
-        echo "<table width=\"100%\" border=\"0\" cellspacing=\"2\"cellpadding=\"0\"><tr align=\"center\" bgcolor=\"#CCCCCC\">";
-        $i = 0;
-        while ($i < mysqli_num_fields($rsResult)) {
-            $field = mysqli_fetch_field_direct($rsResult, $i);
-            $fieldName=$field->name;
-            echo "<td><strong>$fieldName</strong></td>";
-            $i = $i + 1;
-        }
+      echo "<table> <tr bgcolor=\"#00458b\">";
+      $i = 0;
+      while ($i < mysqli_num_fields($rsResult)) {
+        $field = mysqli_fetch_field_direct($rsResult, $i);
+        $fieldName=$field->name;
+        echo "<td class=\"bold-row\"><strong>$fieldName</strong></td>";
+        $i = $i + 1;
+      }
     echo "</tr>";
 
     $bolWhite = true;
@@ -54,26 +90,17 @@ function myTable($obConn, $sql)
         echo "</tr>";
     }
     echo"</table>";
-
     }
-}
+  }
+  include 'mpconnection.php';
+  $conn = OpenCon();
+  if (isset($_POST['go'])){
+      $text = $_POST['statusl'];
+  $sql = "SELECT distinct ServiceProvider.name as Name from manages inner join completesservicerequest on manages.servicerequestid =  completesservicerequest.servicerequestid 
+  INNER JOIN ServiceProvider on ServiceProvider.ServiceProviderid = completesservicerequest.ServiceProviderid where manages.currentstatus = '$text' ";
 
-include 'mpconnection.php';
-$conn = OpenCon();
-
-if (isset($_POST['go'])){
-    $text = $_POST['statusl'];
-$sql = "SELECT distinct ServiceProvider.name from manages inner join completesservicerequest on manages.servicerequestid =  completesservicerequest.servicerequestid 
-INNER JOIN ServiceProvider on ServiceProvider.ServiceProviderid = completesservicerequest.ServiceProviderid where manages.currentstatus = '$text' ";
-
-   myTable($conn, $sql);
-}
-
-
-?>
-
-</body>
-
-
-
+    myTable($conn, $sql);
+  }
+  ?>
+  </body>
 </html>

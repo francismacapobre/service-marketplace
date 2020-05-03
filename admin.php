@@ -57,7 +57,7 @@ if (isset($_POST['adminsignin'])){
     </form>';
 
     echo '<form action="join-query.php" method="post">
-    <input class="admin-button" type="submit" name ="join-query" value="Records">
+    <input class="admin-button" type="submit" name ="join-query" value="Status Records">
     </form>';
     
     echo '<form action= "selection-query.html" method="post">
