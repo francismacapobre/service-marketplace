@@ -1,55 +1,57 @@
 <html>
-<head>
-  <title> New Profile...</title>
-  <style>
-    body {
-      background-color: linen;
-    }
+  <head>
+    <style>
+      body {
+        background-color: #fff;
+      }
 
-    h1 {
-      color: maroon;
-    }
+      h1 {
+        color: #00458b;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 6vmin;
+      }
 
-    button {
-        margin-left: 20px;
-    }
+      p {
+        color: #282828;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 2.2vmin;
+      }
 
-</style>
-</head>
+      .input-field {
+        font-family: "Lucida Console", Monaco, monospace;
+        border-radius: 1vmin;
+        padding-left: 1vmin;
+        width: 35vmin;
+        height: 6vmin;
+      }
 
-<div style="text-align:center;">
-<h1 style="padding-top: 20px">Create New Customer Account</h1>
-<body>
-<form action = "customeradded.php" method = "post">
+      .input-button {
+        font-family: "Lucida Console", Monaco, monospace;
+        border-radius: 1vmin;
+        font-size: 2.2vmin;
+        width: 35vmin;
+        height: 6vmin;
+      }
 
-<div style="text-align:center;">
-<b> Please Enter The Following </b>
+      .input {
+        margin-bottom: 1vmin;
+      }
+    </style>
+  </head>
 
-<p>Username:
-<input type = "text" name = "username" size = 30  required="required">
-</p> 
-
-<p>Card Number (Credit Card Only):
-<input type = "text" name = "cardnum" size = 16 maxlength = 16 required="required">
-</p> 
-
-<p>Billing Address (Apt - House#, Street):
-<input type = "text" name = "caddress" size = 30 required="required" >
-</p> 
-
-<p>Name (First and Last):
-<input type = "text" name = "cname" size = 30 required="required">
-</p> 
-
-<p>
-<input type = "submit" name = "csubmit" value = "Enter">
-</p> 
-
-
-</form>
-</div>
-
-</body>
-</div>
-
+  <div style="text-align:center;">
+  <h1 style="padding-top: 20px">Create Account</h1>
+  <body>
+  <form action = "customeradded.php" method = "post">
+  <div style="text-align:center;">
+  <p>Please fill</p>
+  <div class="input"><input class="input-field" type="text" name="username" size=30 placeholder="Username" required="required"></div>
+  <div class="input"><input class="input-field" type="text" name="cardnum" size=16 maxlength=16 required="required" placeholder="Credit Card Number"></div>
+  <div class="input"><input class="input-field" type="text" name="caddress" size=30 required="required" placeholder="Billing Address (House#, Street)"></div>
+  <div class="input"><input class="input-field" type="text" name="cname" size=30 required="required" placeholder="Full name"></div>
+  <div class="input"><input class="input-button" type = "submit" name = "csubmit" value = "Submit"></div>
+  </form>
+  </div>
+  </body>
+  </div>
 </html>
