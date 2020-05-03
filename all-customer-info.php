@@ -50,7 +50,7 @@
   <div style="text-align:center; padding-top:30px">
   <h1>Customer Records</h1>
   <body>
-  <p>Query all users and information</p>
+  <p>Query all customer information</p>
   <form action="all-customer-info.php" method="post">
     <input class="info-button" type="submit" name="go" value="Retrieve" />
   </form>
@@ -58,45 +58,43 @@
   <?php
   function myTable($obConn, $sql) 
   {
-      $rsResult = mysqli_query($obConn, $sql) or die(mySqli_error($obConn));
+    $rsResult = mysqli_query($obConn, $sql) or die(mySqli_error($obConn));
 
-      if (mysqli_num_rows($rsResult) > 0) {
-        echo "<table><tr bgcolor=\"#00458b\">";
-        $i = 0;
-        while ($i < mysqli_num_fields($rsResult)) {
-          $field = mysqli_fetch_field_direct($rsResult, $i);
-          $fieldName=$field->name;
-          echo "<td class=\"bold-row\"><strong>$fieldName</strong></td>";
-          $i = $i + 1;
+    if (mysqli_num_rows($rsResult) > 0) {
+      echo "<table><tr bgcolor=\"#00458b\">";
+      $i = 0;
+      while ($i < mysqli_num_fields($rsResult)) {
+        $field = mysqli_fetch_field_direct($rsResult, $i);
+        $fieldName=$field->name;
+        echo "<td class=\"bold-row\"><strong>$fieldName</strong></td>";
+        $i = $i + 1;
+    }
+    echo "</tr>";
+
+    $bolWhite = true;
+    while ($row = mysqli_fetch_assoc($rsResult)) {
+      echo $bolWhite ? "<tr bgcolor=\"#F0F0F0\">" : "<tr bgcolor=\"#FFF\">";
+      $bolWhite=!$bolWhite; 
+      foreach($row as $data) {
+          echo "<td>$data</td>";
       }
       echo "</tr>";
+    }
+    echo"</table>";
 
-      $bolWhite = true;
-      while ($row = mysqli_fetch_assoc($rsResult)) {
-          echo $bolWhite ? "<tr bgcolor=\"#F0F0F0\">" : "<tr bgcolor=\"#FFF\">";
-          $bolWhite=!$bolWhite; 
-          foreach($row as $data) {
-              echo "<td>$data</td>";
-          }
-          echo "</tr>";
-      }
-      echo"</table>";
-
-      }
+    }
   }
 
   include 'mpconnection.php';
   $conn = OpenCon();
-  $sql = "select * from customer1 NATURAL JOIN customer2";
+  $sql = "select cardNumber as `Card Number`, customerID as `ID`, 
+  username as `Username`, billingAddress as `Billing Address`, 
+  name as`Name` from customer1 NATURAL JOIN customer2";
 
   if (isset($_POST['go'])){
     myTable($conn, $sql);
   }
 
   ?>
-
 </body>
-
-
-
 </html>
