@@ -18,7 +18,7 @@
 <div style="text-align:center;">
 <h1 style="padding-top: 20px">Create New Service Provider Account</h1>
 <body>
-<form action = "ProviderAdded.php" method = "post">
+<form action = "providerAdded.php" method = "post">
 
 <div style="text-align:center;">
 <b> Please Enter The Following </b>

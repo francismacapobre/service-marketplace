@@ -1,20 +1,29 @@
 <html>
-<head> <title>Verifying...</title><style>
-        body {
-        background-color: linen;
-        }
+  <head> 
+    <title>Administrator</title>
+        <style>
+          body {
+          background-color: white;
+          }
 
-        h1 {
-        color: maroon;
-        }
+          h1 {
+            color: #00458b;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 8vmin;
+          }
 
-        button {
-            margin-left: 20px;
-        }
-    </style></head>
+          .admin-button {
+            font-family: "Lucida Console", Monaco, monospace;
+            font-size: 2.2vmin;
+            width: 35vmin;
+            height: 6vmin;
+          }
 
-<div style="text-align:center; padding-top:30px">
-<h1>Administrator Home</h1>
+        </style>
+    </head>
+
+    <div style="text-align:center; padding-top:30px">
+    <h1>Admin</h1>
 <body>
 
 <?php
@@ -22,38 +31,37 @@
 include 'mpconnection.php';
 $conn = OpenCon();
 
-
 if (isset($_POST['adminsignin'])){
 
-    echo '<p><form action = "all-customer-info.php" method = "post">
-    Customer Records: <input  type = "submit" name = "project" value = "Here">
-    </form></p>';
+    echo '<form action="all-customer-info.php" method = "post">
+    <input class="admin-button" type="submit" name="project" value="Customer Records">
+    </form>';
 
-    echo '<p><form action = "equipmentinfo.html" method = "post">
-    Equipment Information: <input  type = "submit" name = "project" value = "Here">
-    </form></p>';
+    echo '<form action="equipmentinfo.html" method="post">
+    <input class="admin-button" type="submit" name="project" value = "Equipment Info">
+    </form>';
 
-    echo '<p><form action = "agg.php" method = "post">
-    Cheapest Service: <input  type = "submit" name = "agg" value = "Here">
-    </form></p>';
-
-
-    echo '<p><form action = "groupby.php" method = "post">
-    Average Rating for Each Service Provider: <input  type = "submit" name = "groupby" value = "Here">
-    </form></p>';
+    echo '<form action="agg.php" method="post">
+    <input class="admin-button" type="submit" name="agg" value="Cheapest Service">
+    </form>';
 
 
-    echo '<p><form action = "division.php" method = "post">
-    Satisfied Customers: <input  type = "submit" name = "division" value = "Here">
-    </form></p>';
+    echo '<form action="groupby.php" method="post">
+    <input class="admin-button" type="submit" name="groupby" value="Average Ratings">
+    </form>';
 
-    echo '<p><form action = "join-query.php" method="post">
-    Service Providers with Record of Completeness: <input type="submit" name ="join-query" value =
-    "Here"></form></p>';
+
+    echo '<form action="division.php" method="post">
+    <input class="admin-button" type="submit" name="division" value="Satisfied Customers">
+    </form>';
+
+    echo '<form action="join-query.php" method="post">
+    <input class="admin-button" type="submit" name ="join-query" value="Records">
+    </form>';
     
-    echo '<p><form action = "selection-query.html" method="post">
-    Search Service Providers by Rating: <input type="submit" name ="selection-query" value =
-    "Here"> </form></p>';
+    echo '<form action= "selection-query.html" method="post">
+    <input class="admin-button" type="submit" name ="selection-query" value="Search by Rating">
+    </form>';
 
 }
 
